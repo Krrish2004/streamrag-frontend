@@ -80,17 +80,23 @@ const techStack = [
       <div class="container">
         <div class="nav-brand">
           <img src="/logo.svg" alt="StreamRAG" class="logo-image" />
-          <span class="logo-bracket">[</span>
-          <span class="logo-text">StreamRAG</span>
-          <span class="logo-bracket">]</span>
-          <span class="version">v2.0</span>
+          <div class="brand-text">
+            <span class="brand-name">StreamRAG</span>
+            <span class="brand-tagline">Real-time Code Intelligence</span>
+          </div>
         </div>
-        <div class="nav-links">
+        <div class="nav-menu">
+          <a href="#features" class="nav-link">Features</a>
+          <a href="#architecture" class="nav-link">Architecture</a>
+          <a href="https://github.com/Krrish2004/StreamRAG/blob/main/README.md" target="_blank" class="nav-link">Documentation</a>
           <a href="https://github.com/Krrish2004/StreamRAG" target="_blank" class="nav-link">
-            <span class="nav-icon">→</span> GitHub
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"/>
+            </svg>
+            GitHub
           </a>
-          <a href="https://github.com/Krrish2004/StreamRAG#quick-install" target="_blank" class="nav-link nav-cta">
-            Install
+          <a href="https://github.com/Krrish2004/StreamRAG#quick-install" target="_blank" class="nav-cta">
+            Get Started
           </a>
         </div>
       </div>
@@ -180,13 +186,11 @@ const techStack = [
     </section>
 
     <!-- Features Grid -->
-    <section class="features">
+    <section id="features" class="features">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">
-            <span class="title-accent">///</span> Architecture
-          </h2>
-          <p class="section-subtitle">Three-tier extraction. Native daemons. Incremental everything.</p>
+          <h2 class="section-title">Key Features</h2>
+          <p class="section-subtitle">Real-time code intelligence powered by incremental graph updates</p>
         </div>
 
         <div class="features-grid">
@@ -210,7 +214,7 @@ const techStack = [
     </section>
 
     <!-- Tech Stack -->
-    <section class="tech-stack">
+    <section id="architecture" class="tech-stack">
       <div class="container">
         <h3 class="stack-title">
           <span class="terminal-prompt">$</span> tech-stack
@@ -357,14 +361,17 @@ const techStack = [
 
 /* Navigation */
 .navbar {
-  padding: 1.5rem 0;
+  padding: 1.25rem 0;
   position: sticky;
   top: 0;
-  background: rgba(10, 10, 15, 0.95);
-  backdrop-filter: blur(20px);
-  border-bottom: 2px solid rgba(0, 255, 65, 0.2);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(180deg, rgba(10, 10, 15, 0.98) 0%, rgba(10, 10, 15, 0.95) 100%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 255, 65, 0.15);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.4),
+    0 1px 0 rgba(0, 255, 65, 0.1) inset;
   z-index: 100;
+  transition: all 0.3s ease;
 }
 
 .navbar .container {
@@ -373,91 +380,190 @@ const techStack = [
   align-items: center;
 }
 
+/* Brand Section */
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 1.3rem;
-  font-weight: 700;
+  gap: 1rem;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .nav-brand:hover {
-  transform: translateX(5px);
+  transform: translateX(4px);
 }
 
 .logo-image {
-  width: 45px;
-  height: 45px;
-  margin-right: 0.5rem;
-  filter: drop-shadow(0 0 8px rgba(0, 255, 65, 0.4));
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(0 0 12px rgba(0, 255, 65, 0.5));
+  transition: all 0.3s ease;
 }
 
-.logo-bracket {
-  color: var(--neon-green);
+.logo-image:hover {
+  filter: drop-shadow(0 0 20px rgba(0, 255, 65, 0.8));
+  transform: rotate(5deg);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.brand-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
   font-weight: 700;
-  font-size: 1.4rem;
-}
-
-.logo-text {
   color: var(--text-primary);
-  font-weight: 700;
+  line-height: 1;
   letter-spacing: -0.5px;
 }
 
-.version {
+.brand-tagline {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
   color: var(--neon-cyan);
-  font-size: 0.75rem;
-  padding: 0.25rem 0.5rem;
-  border: 1px solid var(--neon-cyan);
-  border-radius: 4px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
-.nav-links {
+/* Navigation Menu */
+.nav-menu {
   display: flex;
-  gap: 2rem;
   align-items: center;
+  gap: 2.5rem;
 }
 
 .nav-link {
-  color: var(--text-primary);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.3s;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1rem;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon-green), var(--neon-cyan));
+  transition: width 0.3s ease;
 }
 
 .nav-link:hover {
   color: var(--neon-green);
-  text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
 }
 
-.nav-icon {
-  color: var(--neon-cyan);
-  font-weight: bold;
+.nav-link:hover::after {
+  width: 100%;
 }
 
+.nav-link svg {
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover svg {
+  transform: scale(1.1);
+}
+
+/* CTA Button */
 .nav-cta {
-  padding: 0.75rem 1.5rem;
-  background: var(--neon-green);
+  padding: 0.75rem 1.75rem;
+  background: linear-gradient(135deg, var(--neon-green) 0%, #00d980 100%);
   color: var(--dark-bg);
-  border-radius: 6px;
-  font-weight: 700;
-  transition: all 0.3s;
-  border: 2px solid var(--neon-green);
-  box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow:
+    0 4px 15px rgba(0, 255, 65, 0.3),
+    0 0 20px rgba(0, 255, 65, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.nav-cta:hover::before {
+  left: 100%;
 }
 
 .nav-cta:hover {
-  background: transparent;
-  color: var(--neon-green);
   transform: translateY(-2px);
-  box-shadow: 0 0 25px rgba(0, 255, 65, 0.5);
+  box-shadow:
+    0 6px 25px rgba(0, 255, 65, 0.4),
+    0 0 30px rgba(0, 255, 65, 0.2);
+}
+
+.nav-cta::after {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .nav-menu {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 0;
+  }
+
+  .nav-brand {
+    gap: 0.75rem;
+  }
+
+  .logo-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-name {
+    font-size: 1.25rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.6rem;
+  }
+
+  .nav-menu {
+    gap: 1rem;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+  }
+
+  .nav-link span {
+    display: none;
+  }
+
+  .nav-cta {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.85rem;
+  }
 }
 
 /* Hero Section */
