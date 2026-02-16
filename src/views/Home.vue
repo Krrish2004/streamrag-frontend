@@ -319,7 +319,7 @@ const techStack = [
 
 .home {
   min-height: 100vh;
-  background: var(--dark-bg);
+  background: var(--bg-white);
   color: var(--text-primary);
   font-family: 'Space Grotesk', sans-serif;
   position: relative;
@@ -334,8 +334,8 @@ const techStack = [
   width: 100%;
   height: 100%;
   background-image:
-    linear-gradient(rgba(0, 255, 65, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 65, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(0, 102, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 102, 255, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
   animation: gridMove 20s linear infinite;
   z-index: 0;
@@ -353,11 +353,11 @@ const techStack = [
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+  background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
   animation: scan 4s linear infinite;
   z-index: 1;
   pointer-events: none;
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 @keyframes scan {
@@ -598,12 +598,12 @@ const techStack = [
   align-items: center;
   gap: 0.75rem;
   padding: 0.75rem 1.5rem;
-  background: rgba(0, 255, 65, 0.1);
-  border: 1px solid var(--neon-green);
+  background: rgba(0, 102, 255, 0.08);
+  border: 1px solid var(--primary-blue);
   border-radius: 50px;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.875rem;
-  color: var(--neon-green);
+  color: var(--primary-blue);
   margin-bottom: 3rem;
   animation: fadeInUp 0.8s ease-out;
 }
@@ -611,7 +611,7 @@ const techStack = [
 .pulse-dot {
   width: 8px;
   height: 8px;
-  background: var(--neon-green);
+  background: var(--primary-blue);
   border-radius: 50%;
   animation: pulse 2s infinite;
 }
@@ -639,7 +639,7 @@ const techStack = [
 .title-line:nth-child(3) { animation-delay: 0.3s; }
 
 .title-highlight {
-  background: linear-gradient(135deg, var(--neon-green), var(--neon-cyan));
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -666,7 +666,7 @@ const techStack = [
 }
 
 .text-highlight {
-  color: var(--neon-cyan);
+  color: var(--primary-blue);
   font-weight: 600;
 }
 
@@ -680,32 +680,33 @@ const techStack = [
 }
 
 .stat-card {
-  background: var(--dark-card);
-  border: 1px solid var(--dark-border);
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
   border-radius: 12px;
   padding: 2rem;
   text-align: center;
   transition: all 0.3s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .stat-card:hover {
-  border-color: var(--neon-green);
+  border-color: var(--primary-blue);
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 255, 65, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 102, 255, 0.1);
 }
 
 .stat-value {
   font-size: 3rem;
   font-weight: 700;
   font-family: 'JetBrains Mono', monospace;
-  color: var(--neon-green);
+  color: var(--primary-blue);
   line-height: 1;
   margin-bottom: 0.5rem;
 }
 
 .stat-unit {
   font-size: 1.5rem;
-  color: var(--neon-cyan);
+  color: var(--accent-teal);
 }
 
 .stat-label {
@@ -736,27 +737,26 @@ const techStack = [
 }
 
 .btn-primary {
-  background: var(--neon-green);
-  color: var(--dark-bg);
-  border: 2px solid var(--neon-green);
+  background: var(--gradient-primary);
+  color: #ffffff;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.2);
 }
 
 .btn-primary:hover {
-  background: transparent;
-  color: var(--neon-green);
-  box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.3);
   transform: translateY(-2px);
 }
 
 .btn-secondary {
   background: transparent;
   color: var(--text-primary);
-  border: 2px solid var(--dark-border);
+  border: 2px solid var(--border-medium);
 }
 
 .btn-secondary:hover {
-  border-color: var(--neon-cyan);
-  color: var(--neon-cyan);
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
   transform: translateY(-2px);
 }
 
@@ -784,15 +784,16 @@ const techStack = [
   position: absolute;
   width: 120px;
   height: 120px;
-  background: var(--dark-card);
-  border: 2px solid var(--neon-green);
+  background: var(--bg-white);
+  border: 2px solid var(--primary-blue);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.875rem;
-  color: var(--neon-green);
+  color: var(--primary-blue);
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.1);
   animation: pulse 3s ease-in-out infinite;
 }
 
@@ -830,9 +831,9 @@ const techStack = [
 }
 
 .connection {
-  stroke: var(--neon-cyan);
+  stroke: var(--primary-blue);
   stroke-width: 2;
-  opacity: 0.3;
+  opacity: 0.2;
   animation: dash 4s linear infinite;
   stroke-dasharray: 10;
 }
@@ -846,7 +847,7 @@ const techStack = [
 /* Features Section */
 .features {
   padding: 8rem 0;
-  background: linear-gradient(180deg, var(--dark-bg) 0%, var(--dark-card) 100%);
+  background: linear-gradient(180deg, var(--bg-white) 0%, var(--bg-light) 100%);
 }
 
 .section-header {
@@ -862,7 +863,7 @@ const techStack = [
 }
 
 .title-accent {
-  color: var(--neon-green);
+  color: var(--primary-blue);
 }
 
 .section-subtitle {
@@ -877,14 +878,15 @@ const techStack = [
 }
 
 .feature-card {
-  background: var(--dark-card);
-  border: 1px solid var(--dark-border);
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
   border-radius: 16px;
   padding: 2.5rem;
   transition: all 0.4s;
   animation: fadeInUp 0.6s ease-out backwards;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .feature-card::before {
@@ -894,7 +896,7 @@ const techStack = [
   left: 0;
   width: 100%;
   height: 4px;
-  background: var(--neon-green);
+  background: var(--primary-blue);
   transform: scaleX(0);
   transition: transform 0.4s;
   transform-origin: left;
@@ -906,14 +908,14 @@ const techStack = [
 
 .feature-card:hover {
   transform: translateY(-10px);
-  border-color: var(--neon-green);
-  box-shadow: 0 20px 50px rgba(0, 255, 65, 0.1);
+  border-color: var(--primary-blue);
+  box-shadow: 0 12px 24px rgba(0, 102, 255, 0.15);
 }
 
-.feature-cyan::before { background: var(--neon-cyan); }
-.feature-cyan:hover { border-color: var(--neon-cyan); }
-.feature-purple::before { background: var(--neon-purple); }
-.feature-purple:hover { border-color: var(--neon-purple); }
+.feature-cyan::before { background: var(--accent-teal); }
+.feature-cyan:hover { border-color: var(--accent-teal); }
+.feature-purple::before { background: var(--accent-purple); }
+.feature-purple:hover { border-color: var(--accent-purple); }
 
 .feature-header {
   display: flex;
@@ -926,19 +928,19 @@ const techStack = [
   font-family: 'JetBrains Mono', monospace;
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--neon-green);
-  background: rgba(0, 255, 65, 0.1);
+  color: var(--primary-blue);
+  background: rgba(0, 102, 255, 0.08);
   padding: 0.75rem 1rem;
   border-radius: 8px;
-  border: 1px solid rgba(0, 255, 65, 0.3);
+  border: 1px solid rgba(0, 102, 255, 0.2);
 }
 
 .feature-metric {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.875rem;
-  color: var(--neon-green);
+  color: var(--primary-blue);
   padding: 0.5rem 1rem;
-  background: rgba(0, 255, 65, 0.1);
+  background: rgba(0, 102, 255, 0.08);
   border-radius: 50px;
 }
 
@@ -957,7 +959,7 @@ const techStack = [
 
 .feature-line {
   height: 2px;
-  background: linear-gradient(90deg, var(--neon-green), transparent);
+  background: linear-gradient(90deg, var(--primary-blue), transparent);
   width: 0;
   transition: width 0.6s ease-out;
 }
@@ -969,18 +971,18 @@ const techStack = [
 /* Tech Stack */
 .tech-stack {
   padding: 6rem 0;
-  background: var(--dark-bg);
+  background: var(--bg-light);
 }
 
 .stack-title {
   font-family: 'JetBrains Mono', monospace;
   font-size: 1.5rem;
-  color: var(--neon-green);
+  color: var(--primary-blue);
   margin-bottom: 2rem;
 }
 
 .terminal-prompt {
-  color: var(--neon-cyan);
+  color: var(--accent-teal);
   margin-right: 0.5rem;
 }
 
@@ -993,28 +995,29 @@ const techStack = [
 .stack-item {
   font-family: 'JetBrains Mono', monospace;
   padding: 0.75rem 1.5rem;
-  background: var(--dark-card);
-  border: 1px solid var(--dark-border);
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
   border-radius: 8px;
   color: var(--text-secondary);
   transition: all 0.3s;
   animation: fadeInUp 0.5s ease-out backwards;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .stack-item:hover {
-  border-color: var(--neon-green);
-  color: var(--neon-green);
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
   transform: translateY(-3px);
 }
 
 .stack-bracket {
-  color: var(--neon-cyan);
+  color: var(--accent-teal);
 }
 
 /* CTA Section */
 .cta-section {
   padding: 8rem 0;
-  background: linear-gradient(180deg, var(--dark-bg) 0%, var(--dark-card) 100%);
+  background: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-white) 100%);
 }
 
 .cta-content {
@@ -1027,7 +1030,7 @@ const techStack = [
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, var(--neon-green), var(--neon-cyan));
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1041,18 +1044,18 @@ const techStack = [
 
 /* Code Block */
 .code-block {
-  background: var(--dark-card);
-  border: 1px solid var(--dark-border);
+  background: #1a1a1a;
+  border: 1px solid var(--border-medium);
   border-radius: 12px;
   overflow: hidden;
   text-align: left;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
 }
 
 .code-header {
   padding: 1rem 1.5rem;
-  background: rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid var(--dark-border);
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -1062,11 +1065,11 @@ const techStack = [
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--neon-green);
+  background: var(--primary-blue);
 }
 
-.code-dot:nth-child(2) { background: var(--neon-cyan); }
-.code-dot:nth-child(3) { background: var(--neon-purple); }
+.code-dot:nth-child(2) { background: var(--accent-teal); }
+.code-dot:nth-child(3) { background: var(--accent-purple); }
 
 .code-title {
   margin-left: auto;
@@ -1080,23 +1083,23 @@ const techStack = [
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.95rem;
   line-height: 1.8;
-  color: var(--text-primary);
+  color: #e0e0e0;
   overflow-x: auto;
 }
 
 .code-comment {
-  color: var(--text-secondary);
+  color: #94a3b8;
 }
 
 .code-command {
-  color: var(--neon-green);
+  color: var(--primary-blue);
 }
 
 /* Footer */
 .footer {
   padding: 4rem 0 2rem;
-  background: var(--dark-bg);
-  border-top: 1px solid var(--dark-border);
+  background: var(--bg-light);
+  border-top: 1px solid var(--border-light);
 }
 
 .footer-content {
@@ -1126,17 +1129,17 @@ const techStack = [
 }
 
 .footer-links a:hover {
-  color: var(--neon-green);
+  color: var(--primary-blue);
 }
 
 .footer-separator {
-  color: var(--dark-border);
+  color: var(--border-medium);
 }
 
 .footer-bottom {
   text-align: center;
   padding-top: 2rem;
-  border-top: 1px solid var(--dark-border);
+  border-top: 1px solid var(--border-light);
   color: var(--text-secondary);
   font-size: 0.875rem;
 }
