@@ -773,11 +773,11 @@ bash ~/.claude/plugins/.../build-native-parsers.sh`
 }
 
 .btn-primary {
-  background: var(--primary-blue);
-  background: var(--gradient-primary);
+  background: var(--primary-blue) !important;
+  background: var(--gradient-primary) !important;
   color: #ffffff !important;
-  border: 2px solid transparent;
-  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.2);
+  border: 2px solid var(--primary-blue) !important;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.2) !important;
 }
 
 .btn-primary:hover {
