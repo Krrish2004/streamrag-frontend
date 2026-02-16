@@ -67,6 +67,33 @@ const techStack = [
   'Unix Sockets',
   'Msgpack Protocol'
 ]
+
+// Copy code to clipboard
+const copyCode = () => {
+  const code = `# Install prerequisites
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# Install StreamRAG
+claude plugin marketplace add Krrish2004/StreamRAG
+claude plugin install streamrag@streamrag
+
+# Build native parsers
+bash ~/.claude/plugins/.../build-native-parsers.sh`
+
+  navigator.clipboard.writeText(code).then(() => {
+    // Show feedback (optional - could add a "Copied!" message)
+    const button = document.querySelector('.copy-button')
+    if (button) {
+      const originalText = button.querySelector('.copy-text')
+      if (originalText) {
+        originalText.textContent = 'Copied!'
+        setTimeout(() => {
+          originalText.textContent = 'Copy'
+        }, 2000)
+      }
+    }
+  })
+}
 </script>
 
 <template>
@@ -244,20 +271,29 @@ const techStack = [
           </p>
           <div class="code-block">
             <div class="code-header">
-              <span class="code-dot"></span>
-              <span class="code-dot"></span>
-              <span class="code-dot"></span>
-              <span class="code-title">terminal</span>
+              <div class="code-header-left">
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+                <span class="code-title">terminal</span>
+              </div>
+              <button class="copy-button" @click="copyCode">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="5" y="5" width="9" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M3 10V3C3 2.44772 3.44772 2 4 2H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <span class="copy-text">Copy</span>
+              </button>
             </div>
             <pre class="code-content"><code><span class="code-comment"># Install prerequisites</span>
-<span class="code-command">curl</span> --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+<span class="code-prompt">$</span> <span class="code-command">curl</span> --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 <span class="code-comment"># Install StreamRAG</span>
-<span class="code-command">claude plugin marketplace add</span> Krrish2004/StreamRAG
-<span class="code-command">claude plugin install</span> streamrag@streamrag
+<span class="code-prompt">$</span> <span class="code-command">claude plugin marketplace add</span> Krrish2004/StreamRAG
+<span class="code-prompt">$</span> <span class="code-command">claude plugin install</span> streamrag@streamrag
 
 <span class="code-comment"># Build native parsers</span>
-<span class="code-command">bash</span> ~/.claude/plugins/.../build-native-parsers.sh</code></pre>
+<span class="code-prompt">$</span> <span class="code-command">bash</span> ~/.claude/plugins/.../build-native-parsers.sh</code></pre>
           </div>
         </div>
       </div>
@@ -1058,6 +1094,12 @@ const techStack = [
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.code-header-left {
+  display: flex;
+  align-items: center;
   gap: 0.5rem;
 }
 
@@ -1072,10 +1114,38 @@ const techStack = [
 .code-dot:nth-child(3) { background: var(--accent-purple); }
 
 .code-title {
-  margin-left: auto;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.875rem;
   color: var(--text-secondary);
+}
+
+.copy-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  color: #e0e0e0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copy-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+}
+
+.copy-button svg {
+  transition: transform 0.2s ease;
+}
+
+.copy-button:hover svg {
+  transform: scale(1.1);
 }
 
 .code-content {
@@ -1093,6 +1163,12 @@ const techStack = [
 
 .code-command {
   color: var(--primary-blue);
+}
+
+.code-prompt {
+  color: var(--accent-teal);
+  font-weight: 600;
+  user-select: none;
 }
 
 /* Footer */
