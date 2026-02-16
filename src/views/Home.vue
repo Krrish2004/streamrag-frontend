@@ -292,14 +292,29 @@ const techStack = [
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
-  --neon-green: #00ff41;
-  --neon-cyan: #00d9ff;
-  --neon-purple: #bd00ff;
-  --dark-bg: #0a0a0f;
-  --dark-card: #131318;
-  --dark-border: #1a1a24;
-  --text-primary: #ffffff;
-  --text-secondary: #b0b0c0;
+  /* Modern techy color palette */
+  --primary-blue: #0066ff;
+  --accent-purple: #7c3aed;
+  --accent-teal: #0891b2;
+  --accent-indigo: #4f46e5;
+
+  /* Clean backgrounds */
+  --bg-white: #ffffff;
+  --bg-light: #f8f9fa;
+  --bg-lighter: #fafbfc;
+
+  /* Professional text colors */
+  --text-primary: #1a1a1a;
+  --text-secondary: #64748b;
+  --text-tertiary: #94a3b8;
+
+  /* Borders and dividers */
+  --border-light: #e2e8f0;
+  --border-medium: #cbd5e1;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #0066ff 0%, #4f46e5 100%);
+  --gradient-accent: linear-gradient(135deg, #0891b2 0%, #7c3aed 100%);
 }
 
 .home {
@@ -364,12 +379,12 @@ const techStack = [
   padding: 1.25rem 0;
   position: sticky;
   top: 0;
-  background: linear-gradient(180deg, rgba(10, 10, 15, 0.98) 0%, rgba(10, 10, 15, 0.95) 100%);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(0, 255, 65, 0.15);
+  border-bottom: 1px solid var(--border-light);
   box-shadow:
-    0 4px 24px rgba(0, 0, 0, 0.4),
-    0 1px 0 rgba(0, 255, 65, 0.1) inset;
+    0 1px 3px rgba(0, 0, 0, 0.06),
+    0 1px 2px rgba(0, 0, 0, 0.04);
   z-index: 100;
   transition: all 0.3s ease;
 }
@@ -396,13 +411,13 @@ const techStack = [
 .logo-image {
   width: 50px;
   height: 50px;
-  filter: drop-shadow(0 0 12px rgba(0, 255, 65, 0.5));
+  filter: drop-shadow(0 2px 8px rgba(0, 102, 255, 0.15));
   transition: all 0.3s ease;
 }
 
 .logo-image:hover {
-  filter: drop-shadow(0 0 20px rgba(0, 255, 65, 0.8));
-  transform: rotate(5deg);
+  filter: drop-shadow(0 4px 12px rgba(0, 102, 255, 0.25));
+  transform: scale(1.05);
 }
 
 .brand-text {
@@ -423,7 +438,7 @@ const techStack = [
 .brand-tagline {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.7rem;
-  color: var(--neon-cyan);
+  color: var(--primary-blue);
   font-weight: 500;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -437,7 +452,7 @@ const techStack = [
 }
 
 .nav-link {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-secondary);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
@@ -456,12 +471,12 @@ const techStack = [
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--neon-green), var(--neon-cyan));
+  background: var(--gradient-primary);
   transition: width 0.3s ease;
 }
 
 .nav-link:hover {
-  color: var(--neon-green);
+  color: var(--primary-blue);
 }
 
 .nav-link:hover::after {
@@ -479,16 +494,16 @@ const techStack = [
 /* CTA Button */
 .nav-cta {
   padding: 0.75rem 1.75rem;
-  background: linear-gradient(135deg, var(--neon-green) 0%, #00d980 100%);
-  color: var(--dark-bg);
+  background: var(--gradient-primary);
+  color: #ffffff;
   border-radius: 8px;
   font-weight: 600;
   font-size: 0.95rem;
   transition: all 0.3s ease;
   border: none;
   box-shadow:
-    0 4px 15px rgba(0, 255, 65, 0.3),
-    0 0 20px rgba(0, 255, 65, 0.1);
+    0 4px 12px rgba(0, 102, 255, 0.2),
+    0 2px 4px rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: hidden;
 }
@@ -511,8 +526,8 @@ const techStack = [
 .nav-cta:hover {
   transform: translateY(-2px);
   box-shadow:
-    0 6px 25px rgba(0, 255, 65, 0.4),
-    0 0 30px rgba(0, 255, 65, 0.2);
+    0 8px 20px rgba(0, 102, 255, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
 .nav-cta::after {
