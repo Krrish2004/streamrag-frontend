@@ -32,28 +32,28 @@ const features = [
   {
     title: 'Incremental Updates',
     description: 'Surgical AST diffing patches only changed nodes. No full rebuilds.',
-    icon: '⚡',
+    icon: 'ΔAST',
     metric: '0.05ms',
     color: 'cyan'
   },
   {
     title: 'Native Parsers',
     description: 'Rust, Node.js, JVM daemons provide full AST parsing over Unix sockets.',
-    icon: '🔧',
+    icon: 'PARSE',
     metric: '3 Daemons',
     color: 'green'
   },
   {
     title: 'Token Efficiency',
     description: 'Graph queries replace exploration. 96% reduction on architecture traces.',
-    icon: '📊',
+    icon: 'GRAPH',
     metric: '47% Less',
     color: 'purple'
   },
   {
     title: 'Multi-Language',
     description: 'Python, TypeScript, JavaScript, Rust, C, C++, Java with intelligent fallbacks.',
-    icon: '🌐',
+    icon: 'LANG',
     metric: '7 Languages',
     color: 'cyan'
   }
@@ -79,6 +79,7 @@ const techStack = [
     <nav class="navbar">
       <div class="container">
         <div class="nav-brand">
+          <img src="/logo.svg" alt="StreamRAG" class="logo-image" />
           <span class="logo-bracket">[</span>
           <span class="logo-text">StreamRAG</span>
           <span class="logo-bracket">]</span>
@@ -378,6 +379,12 @@ const techStack = [
   font-family: 'JetBrains Mono', monospace;
   font-size: 1.2rem;
   font-weight: 700;
+}
+
+.logo-image {
+  width: 40px;
+  height: 40px;
+  margin-right: 0.5rem;
 }
 
 .logo-bracket {
@@ -779,7 +786,14 @@ const techStack = [
 }
 
 .feature-icon {
-  font-size: 2.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--neon-green);
+  background: rgba(0, 255, 65, 0.1);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 255, 65, 0.3);
 }
 
 .feature-metric {
