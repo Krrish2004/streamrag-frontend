@@ -488,7 +488,7 @@ bash ~/.claude/plugins/.../build-native-parsers.sh`
 }
 
 .nav-link {
-  color: var(--text-secondary);
+  color: var(--text-secondary) !important;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
@@ -512,7 +512,7 @@ bash ~/.claude/plugins/.../build-native-parsers.sh`
 }
 
 .nav-link:hover {
-  color: var(--primary-blue);
+  color: var(--primary-blue) !important;
 }
 
 .nav-link:hover::after {
