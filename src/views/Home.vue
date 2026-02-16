@@ -294,8 +294,8 @@ const techStack = [
   --dark-bg: #0a0a0f;
   --dark-card: #131318;
   --dark-border: #1a1a24;
-  --text-primary: #e0e0e0;
-  --text-secondary: #8a8a9a;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0c0;
 }
 
 .home {
