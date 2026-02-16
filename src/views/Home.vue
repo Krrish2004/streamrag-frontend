@@ -273,7 +273,7 @@ const techStack = [
             <span class="footer-separator">•</span>
             <a href="https://github.com/Krrish2004" target="_blank">@Krrish2004</a>
             <span class="footer-separator">•</span>
-            <span>MIT License</span>
+            <span>All Rights Reserved</span>
           </div>
         </div>
         <div class="footer-bottom">
@@ -357,12 +357,13 @@ const techStack = [
 
 /* Navigation */
 .navbar {
-  padding: 2rem 0;
+  padding: 1.5rem 0;
   position: sticky;
   top: 0;
-  background: rgba(10, 10, 15, 0.8);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--dark-border);
+  background: rgba(10, 10, 15, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 2px solid rgba(0, 255, 65, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   z-index: 100;
 }
 
@@ -377,23 +378,33 @@ const techStack = [
   align-items: center;
   gap: 0.5rem;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.nav-brand:hover {
+  transform: translateX(5px);
 }
 
 .logo-image {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   margin-right: 0.5rem;
+  filter: drop-shadow(0 0 8px rgba(0, 255, 65, 0.4));
 }
 
 .logo-bracket {
   color: var(--neon-green);
   font-weight: 700;
+  font-size: 1.4rem;
 }
 
 .logo-text {
   color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .version {
@@ -411,37 +422,42 @@ const techStack = [
 }
 
 .nav-link {
-  color: var(--text-secondary);
+  color: var(--text-primary);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: all 0.3s;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-size: 1rem;
 }
 
 .nav-link:hover {
   color: var(--neon-green);
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
 }
 
 .nav-icon {
   color: var(--neon-cyan);
+  font-weight: bold;
 }
 
 .nav-cta {
   padding: 0.75rem 1.5rem;
   background: var(--neon-green);
   color: var(--dark-bg);
-  border-radius: 4px;
-  font-weight: 600;
+  border-radius: 6px;
+  font-weight: 700;
   transition: all 0.3s;
+  border: 2px solid var(--neon-green);
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
 }
 
 .nav-cta:hover {
-  background: var(--neon-cyan);
-  color: var(--dark-bg);
+  background: transparent;
+  color: var(--neon-green);
   transform: translateY(-2px);
-  box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+  box-shadow: 0 0 25px rgba(0, 255, 65, 0.5);
 }
 
 /* Hero Section */
